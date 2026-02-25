@@ -1,10 +1,3 @@
-//
-//  CameraPreview.swift
-//  CameraApp
-//
-//  Created by Nimalan Arulvelan on 1/21/26.
-//
-
 import SwiftUI
 import AVFoundation
 
@@ -21,6 +14,7 @@ final class PreviewView: UIView {
 struct CameraPreview: UIViewRepresentable {
 
     let session: AVCaptureSession
+    let focusAction: (CGPoint) -> Void
 
     func makeUIView(context: Context) -> PreviewView {
         let view = PreviewView()
@@ -29,7 +23,5 @@ struct CameraPreview: UIViewRepresentable {
         return view
     }
 
-    func updateUIView(_ uiView: PreviewView, context: Context) {
-        // Nothing needed — the layer automatically resizes with the view
-    }
+    func updateUIView(_ uiView: PreviewView, context: Context) {}
 }
